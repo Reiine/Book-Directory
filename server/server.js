@@ -1,0 +1,18 @@
+const express = require("express");
+const cors = require("cors");
+const controller = require("./controller");
+
+const port = process.env.PORT || 3001;
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.get("/get-book-data", controller.getBooks);
+app.post("/add", controller.addBook);
+app.put('/update',controller.updateBook);
+app.post("/delete", controller.deleteBook);
+
+app.listen(port,()=>{
+  console.log(`Server listening on port ${port}` );
+});
