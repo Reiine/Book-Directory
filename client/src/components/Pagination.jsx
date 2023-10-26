@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Pagination({ totalItems, itemsPerPage, setCurrentPageIndex }) {
+function Pagination({ totalItems, itemsPerPage, setCurrentPageIndex="1" }) {
   const [focusedButton, setFocusedButton] = useState(0);
 
   const handleButtonClick = (index) => {
